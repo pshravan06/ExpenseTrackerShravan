@@ -4,6 +4,8 @@ import ExpenseForm from './ExpenseForm';
 
 const NewExpense = (props) => {
 
+  //function passed to ExpenseForm Component
+  //adds enteredExpenseData & assigns new entered data random ID key #
   const saveExpenseDataHandler = (enteredExpenseData)=>{
     const expenseData = {
       ...enteredExpenseData,
