@@ -14,15 +14,18 @@ const ExpenseForm = (props) => {
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
   };
+  //function for when submit button on form is clicked
   const submitHandler = (event) => {
     event.preventDefault();
-
+    //object "expenseData" is created and stores title,amount, and date
     const expenseData = {
       title: enteredTitle,
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
+    //function "onSaveExpenseData" is called from NewExpense component, expenseData is argument
     props.onSaveExpenseData(expenseData);
+    //lastly, form is cleared after submit button is clicked
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
