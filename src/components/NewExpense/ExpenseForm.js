@@ -20,7 +20,7 @@ const ExpenseForm = (props) => {
     //object "expenseData" is created and stores title,amount, and date
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
     //function "onSaveExpenseData" is called from NewExpense component, expenseData is argument
@@ -63,6 +63,7 @@ const ExpenseForm = (props) => {
         </div>
       </div>
       <div className="new-expense__actions">
+        <button type = "button" onClick ={props.onCancel}>Cancel</button>
         <button type="submit">ADD EXPENSE</button>
       </div>
     </form>
